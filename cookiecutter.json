@@ -1,0 +1,10 @@
+{
+  "title": "My Nion Swift Plug-In",
+  "author": "My Name",
+  "github_organization": "github-organization",
+  "github_username": "github-username",
+  "repo_name": "my-github-repo-name",
+  "org_name": "orgnameforpackage",
+  "lib_name": "libnameforpackage",
+  "release_date": "2021-12-01"
+}
