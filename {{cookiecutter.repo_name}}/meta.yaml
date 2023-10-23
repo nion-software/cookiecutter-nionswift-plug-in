@@ -18,8 +18,8 @@ requirements:
     - pip
     - setuptools
   run:
-    - python >=3.8
-    - nionswift >=0.16.0,<0.17.0
+    - python >=3.9
+    - nionswift >=16.9.0,<17.0.0
 
 test:
   imports:
