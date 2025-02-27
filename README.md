@@ -7,7 +7,7 @@ Install cookiecutter into your Python environment.
 # Run Cookiecutter to Generate a Nion Swift package
 
 ```
-cookiecutter https://github.com/nion-software/cookiecutter-nionswift-plug-in
+cookiecutter gh:nion-software/cookiecutter-nionswift-plug-in
 ```
 
 Cookiecutter will ask a number of questions to configure your package.
