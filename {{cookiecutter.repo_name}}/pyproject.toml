@@ -1,3 +1,44 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{cookiecutter.repo_name}}"
+version = "0.1.0"
+authors = [
+    { name = "{{cookiecutter.author}}" }
+]
+description = "Library and UI for processing with Nion Swift."
+readme = "README.rst"
+requires-python = ">=3.12"
+license = "GPL-3.0-only"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14"
+]
+urls = { "Homepage" = "https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.repo_name}}" }
+dependencies = [
+    "nionswift>=16.16,<17.0"
+]
+
+[tool.setuptools.packages.find]
+include = [
+    "nion",
+    "{{cookiecutter.org_name}}.{{cookiecutter.lib_name}}",
+    "{{cookiecutter.org_name}}.{{cookiecutter.lib_name}}.test",
+    "nionswift_plugin",
+    "nionswift_plugin.{{cookiecutter.lib_name}}_ui",
+    "nionswift_plugin.{{cookiecutter.lib_name}}_ui.test"
+]
+
+[tool.setuptools.package-data]
+"{{cookiecutter.org_name}}.{{cookiecutter.lib_name}}" = ["resources/*", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "{{cookiecutter.org_name}}/{{cookiecutter.lib_name}}/test",
+    "nionswift_plugin/{{cookiecutter.lib_name}}_ui/test"
+]
