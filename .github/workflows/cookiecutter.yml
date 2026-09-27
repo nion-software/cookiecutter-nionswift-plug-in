@@ -51,6 +51,11 @@ jobs:
       working-directory: generated/generated-plug-in
       run: |
         mypy
+    - name: Install Package
+      working-directory: generated/generated-plug-in
+      shell: bash
+      run: |
+        python -m pip install dist/*.whl
     - name: Run Tests
       working-directory: generated/generated-plug-in
       run: |
