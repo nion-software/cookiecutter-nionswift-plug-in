@@ -1,6 +1,7 @@
 # Install Cookiecutter
 
-Install cookiecutter into your Python environment.
+Install cookiecutter into your Python environment. Version 2.2 or later is required, since the questions use prompt
+text.
 
 [CookieCutter project on GitHub](https://github.com/cookiecutter/cookiecutter)
 
@@ -12,7 +13,21 @@ cookiecutter gh:nion-software/cookiecutter-nionswift-plug-in
 
 Cookiecutter will ask a number of questions to configure your package.
 
-The 'repo_name' will be the name of the directory for the new package.
+| Question | Meaning |
+| --- | --- |
+| `title` | The plug-in title, used as the menu name in Nion Swift and as the readme heading. |
+| `author` | Your name, recorded as the package author. |
+| `github_organization` | The GitHub organization or user which owns the repository. |
+| `github_username` | The GitHub username of the package maintainer. |
+| `repo_name` | The repository directory name, which is also the distribution name on PyPI. |
+| `org_name` | The top level Python package name, usually your organization. Must be a valid Python name. |
+| `lib_name` | The Python package name for your library. Must be a valid Python name. |
+| `release_date` | The date of your initial release, or `unreleased` until you make one. |
+
+The answers are checked before anything is generated, so an unusable package or distribution name is reported instead
+of producing a project which cannot be imported or built.
+
+The library is generated in `<org_name>/<lib_name>` and the user interface in `nionswift_plugin/<lib_name>_ui`.
 
 # Install New Package into Your Python Environment
 
@@ -35,3 +50,19 @@ python -m pip install <name-of-your-package>
 ```
 nionswift
 ```
+
+# Check Your Package
+
+The generated package is configured so the same commands run locally and in continuous integration.
+
+```
+python -m pip install -r test-requirements.txt
+python -m pytest
+mypy
+```
+
+# Publish Your Package
+
+The generated workflow builds on each push and pull request against the `main` branch, and publishes to PyPI when you
+push a tag. Publishing uses a `pypi_password` repository secret holding a PyPI API token, so add that secret before
+pushing your first tag.
