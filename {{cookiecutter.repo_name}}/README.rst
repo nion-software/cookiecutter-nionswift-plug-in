@@ -24,4 +24,4 @@ This Nion Swift plug-in is comprised of libraries and UI's useful for processing
 More Information
 ----------------
 
-- `Changelog <https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.repo_name}}/blob/master/CHANGES.rst>`_
+- `Changelog <https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.repo_name}}/blob/main/CHANGES.rst>`_
