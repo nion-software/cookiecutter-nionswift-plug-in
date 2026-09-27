@@ -15,8 +15,8 @@ This Nion Swift plug-in is comprised of libraries and UI's useful for processing
     * - package
       - |version|
 
-.. |version| image:: https://img.shields.io/pypi/v/{{cookiecutter.github_organization}}-{{cookiecutter.repo_name}}.svg
-   :target: https://pypi.org/project/{{cookiecutter.github_organization}}-{{cookiecutter.repo_name}}/
+.. |version| image:: https://img.shields.io/pypi/v/{{cookiecutter.repo_name}}.svg
+   :target: https://pypi.org/project/{{cookiecutter.repo_name}}/
    :alt: Latest PyPI version
 
 .. end-badges
