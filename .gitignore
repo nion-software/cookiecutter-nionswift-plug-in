@@ -1,0 +1,2 @@
+# Files Finder leaves behind. macOS creates these automatically, so they are ignored rather than removed.
+.DS_Store
