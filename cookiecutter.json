@@ -3,8 +3,18 @@
   "author": "My Name",
   "github_organization": "github-organization",
   "github_username": "github-username",
-  "repo_name": "my-github-repo-name",
-  "org_name": "orgnameforpackage",
-  "lib_name": "libnameforpackage",
-  "release_date": "2024-04-01"
+  "repo_name": "{{ cookiecutter.title|lower|replace(' ', '-') }}",
+  "org_name": "{{ cookiecutter.github_organization|lower|replace('-', '_')|replace('.', '_') }}",
+  "lib_name": "{{ cookiecutter.title|lower|replace(' ', '_')|replace('-', '_') }}",
+  "release_date": "unreleased",
+  "__prompts__": {
+    "title": "Plug-in title, used as the menu name and the readme heading",
+    "author": "Author name",
+    "github_organization": "GitHub organization or user which owns the repository",
+    "github_username": "GitHub username of the package maintainer",
+    "repo_name": "Repository name, also the distribution name on PyPI",
+    "org_name": "Top level Python package name, usually the organization (lowercase, no hyphens)",
+    "lib_name": "Python package name for the library (lowercase, no hyphens)",
+    "release_date": "Date of the initial release, or 'unreleased' until it is released"
+  }
 }
