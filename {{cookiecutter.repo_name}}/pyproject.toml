@@ -21,7 +21,8 @@ classifiers = [
 ]
 urls = { "Homepage" = "https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.repo_name}}" }
 dependencies = [
-    "nionswift>=16.16,<17.0"
+    "nionswift>=16.16,<17.0",
+    "numpy>=2.0,<3.0"
 ]
 
 [tool.setuptools.packages.find]
