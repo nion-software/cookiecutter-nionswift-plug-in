@@ -26,12 +26,8 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 include = [
-    "nion",
-    "{{cookiecutter.org_name}}.{{cookiecutter.lib_name}}",
-    "{{cookiecutter.org_name}}.{{cookiecutter.lib_name}}.test",
-    "nionswift_plugin",
-    "nionswift_plugin.{{cookiecutter.lib_name}}_ui",
-    "nionswift_plugin.{{cookiecutter.lib_name}}_ui.test"
+    "{{cookiecutter.org_name}}*",
+    "nionswift_plugin*"
 ]
 
 [tool.setuptools.package-data]
