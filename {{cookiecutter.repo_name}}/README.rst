@@ -1,5 +1,5 @@
 {{cookiecutter.title}}
-======================
+{{"=" * cookiecutter.title|length}}
 
 by {{cookiecutter.author}}
 
