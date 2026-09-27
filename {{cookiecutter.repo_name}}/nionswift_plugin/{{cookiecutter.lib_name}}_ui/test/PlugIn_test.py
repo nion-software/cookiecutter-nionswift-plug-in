@@ -18,4 +18,4 @@ class TestLibrary(unittest.TestCase):
 
     def test_menu_item_name(self) -> None:
         api = Facade.get_api("~1.0", "~1.0")
-        self.assertEqual("cookiecutter_menu", MenuItem.MenuItemDelegate(api).menu_id)
+        self.assertEqual("{{cookiecutter.lib_name}}_menu", MenuItem.MenuItemDelegate(api).menu_id)

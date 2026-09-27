@@ -11,8 +11,8 @@ _ = gettext.gettext
 
 class MenuItemDelegate:
     def __init__(self, api: Facade.API_1) -> None:
-        self.menu_id = "cookiecutter_menu"  # required, specify menu_id where this item will go
-        self.menu_name = _("Cookiecutter")  # optional, specify default name if not a standard menu
+        self.menu_id = "{{cookiecutter.lib_name}}_menu"  # required, specify menu_id where this item will go
+        self.menu_name = _("{{cookiecutter.title}}")  # optional, specify default name if not a standard menu
         self.menu_before_id = "window_menu"  # optional, specify before menu_id if not a standard menu
         self.__menu_item_name = _("My Menu Item")  # menu item name
         self.__api = api
