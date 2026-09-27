@@ -42,3 +42,11 @@ testpaths = [
     "{{cookiecutter.org_name}}/{{cookiecutter.lib_name}}/test",
     "nionswift_plugin/{{cookiecutter.lib_name}}_ui/test"
 ]
+
+[tool.mypy]
+ignore_missing_imports = true
+follow_imports = "silent"
+strict = true
+warn_redundant_casts = false
+warn_unused_ignores = false
+packages = ["{{cookiecutter.org_name}}.{{cookiecutter.lib_name}}", "nionswift_plugin.{{cookiecutter.lib_name}}_ui"]
