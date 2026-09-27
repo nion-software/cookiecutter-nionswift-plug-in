@@ -64,5 +64,10 @@ mypy
 # Publish Your Package
 
 The generated workflow builds on each push and pull request against the `main` branch, and publishes to PyPI when you
-push a tag. Publishing uses a `pypi_password` repository secret holding a PyPI API token, so add that secret before
+push a tag. Publishing uses a trusted publisher, so there is no API token to create or store. Set it up once, before
 pushing your first tag.
+
+1. Create an environment named `release` in the repository settings on GitHub.
+2. Add a trusted publisher on PyPI for the project, naming the owner, the repository, the workflow file
+   `python-package.yml`, and the `release` environment. For a project which has never been published, add it as a
+   pending publisher instead.

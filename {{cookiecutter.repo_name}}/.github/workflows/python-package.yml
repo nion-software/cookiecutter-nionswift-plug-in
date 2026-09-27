@@ -53,9 +53,27 @@ jobs:
       with:
         name: distribution
         path: dist
-    - name: Publish package
+
+  pypi-publish:
+    name: Upload release to PyPI
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
+    environment: release
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+    steps:
+    - name: Download All Artifacts
+      uses: actions/download-artifact@v4
+    - name: Copy files to upload to PyPI to dist.
+      shell: bash
+      run: |
+        mkdir dist
+        find . -name "*.whl" -exec cp {} dist \;
+        find . -name "*.tar.gz" -exec cp {} dist \;
+        ls -lR .
+    - name: Publish package distributions to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
-      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags') && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
       with:
-        user: __token__
-        password: ${{"{{"}} secrets.pypi_password {{"}}"}}
+        skip-existing: true
+        print-hash: true
