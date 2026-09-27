@@ -4,7 +4,8 @@
 #   pip install -r test-requirements.txt
 
 # A plug-in targeting a released Nion Swift tests against the released packages, which is the usual case and what this
-# file does. The released Nion Swift brings its own dependencies, so nothing else has to be listed here.
+# file does. Nion Swift brings its own dependencies, numpy, scipy and pillow among them, so only a dependency of this
+# plug-in which Nion Swift does not already require has to be added here.
 nionswift
 
 # A plug-in targeting Nion Swift under development, e.g. one using a feature which is not released yet, tests against
