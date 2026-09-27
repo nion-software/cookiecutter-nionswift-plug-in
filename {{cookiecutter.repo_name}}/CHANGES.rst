@@ -1,6 +1,7 @@
+{% set release_title = "0.1.0 (" ~ cookiecutter.release_date ~ ")" -%}
 Changelog
 =========
 
-0.1.0 ({{cookiecutter.release_date}}):
--------------------
+{{release_title}}
+{{"-" * release_title|length}}
 - Initial version.
