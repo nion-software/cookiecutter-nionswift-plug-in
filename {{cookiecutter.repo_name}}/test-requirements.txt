@@ -3,4 +3,17 @@
 # Use it like this:
 #   pip install -r test-requirements.txt
 
+# A plug-in targeting a released Nion Swift tests against the released packages, which is the usual case and what this
+# file does. The released Nion Swift brings its own dependencies, so nothing else has to be listed here.
 nionswift
+
+# A plug-in targeting Nion Swift under development, e.g. one using a feature which is not released yet, tests against
+# the packages in their repositories instead. Comment out the requirement above and uncomment the ones below. Return to
+# the released package once the feature it needs is released, otherwise the plug-in is only ever tested against code
+# which the people installing it do not have.
+#
+# git+https://github.com/nion-software/nionutils.git#egg=nionutils
+# git+https://github.com/nion-software/nionui.git#egg=nionui
+# git+https://github.com/nion-software/niondata.git#egg=niondata
+# git+https://github.com/nion-software/nionswift.git#egg=nionswift
+# git+https://github.com/nion-software/nionswift-io.git#egg=nionswift-io
